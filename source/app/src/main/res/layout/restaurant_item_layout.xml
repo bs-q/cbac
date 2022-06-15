@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="hq.remview.ui.main.adapter.MainItem" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <hq.remview.packages.swipe.SwipeRevealLayout
+        android:id="@+id/swipe_layout"
+        app:minDistRequestDisallowParent="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_7sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        app:dragEdge="right"
+        app:mode="same_level">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/delete"
+                app:cardBackgroundColor="@android:color/holo_red_dark"
+                app:contentPaddingLeft="@dimen/_15sdp"
+                app:contentPaddingRight="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                >
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_delete" />
+            </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp">
+            <RelativeLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#333333">
+
+                <ImageView
+                    android:id="@+id/restaurant_item_icon"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:src="@drawable/restaurant_building"
+                    app:tint="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/_9sdp"
+                    android:layout_toEndOf="@id/restaurant_item_icon"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/restaurant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{item.entity.name}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="@{@string/lastaccess+` `+@string/format(item.entity.lastAccessDate)}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </hq.remview.packages.swipe.SwipeRevealLayout>
+
+
+</layout>

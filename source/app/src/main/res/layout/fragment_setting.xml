@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="f"
+            type="hq.remview.ui.main.setting.SettingFragment" />
+        <variable
+            name="vm"
+            type="hq.remview.ui.main.setting.SettingViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/with_restaurant"
+        android:background="#222222"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/news_app_bar"
+            layout="@layout/layout_setting_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentTop="true"
+            app:f="@{f}" />
+
+        <FrameLayout
+            android:layout_below="@id/news_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:scrollbars="none"
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </FrameLayout>
+    </RelativeLayout>
+
+</layout>

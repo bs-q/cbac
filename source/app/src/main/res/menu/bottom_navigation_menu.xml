@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/store"
+        android:enabled="true"
+        android:icon="@drawable/_online_shop"
+        android:title="@string/store"/>
+    <item
+        android:id="@+id/revenue"
+        android:enabled="true"
+        android:icon="@drawable/pay_date"
+        android:title="@string/revenue"/>
+    <item
+        android:id="@+id/settings"
+        android:enabled="true"
+        android:icon="@drawable/_remote_control"
+        android:title="@string/settings"/>
+    <item
+        android:id="@+id/news"
+        android:enabled="true"
+        android:icon="@drawable/_news"
+        android:title="@string/news"/>
+
+</menu>

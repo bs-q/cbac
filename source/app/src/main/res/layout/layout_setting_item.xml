@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="name"
+            type="String" />
+    </data>
+    <LinearLayout
+        android:id="@+id/revenue_item"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_98sdp">
+        <ImageView
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:src="@drawable/revenue_icon"/>
+        <TextView
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:text="@{name}"/>
+    </LinearLayout>
+
+
+</layout>

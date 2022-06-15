@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="money"
+            type="String" />
+        <variable
+            name="quantity"
+            type="String" />
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="type"
+            type="Integer" />
+        <variable
+            name="line"
+            type="Boolean" />
+        <import type="android.view.View"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_marginVertical="@dimen/_6sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{type == 0? View.VISIBLE: View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@{name}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/price"
+                android:text="@{quantity}"
+                android:textColor="#9EFFFFFF"
+                android:textSize="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                />
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{money}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginVertical="@dimen/_6sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{type == 1? View.VISIBLE: View.GONE}">
+            <TextView
+                android:id="@+id/beilagePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{money}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_toLeftOf="@id/beilagePrice"
+                android:text="@{name}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+
+        </RelativeLayout>
+        <View
+            android:visibility="@{line==true?View.VISIBLE:View.GONE}"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#80EBEFF2"/>
+    </LinearLayout>
+
+</layout>

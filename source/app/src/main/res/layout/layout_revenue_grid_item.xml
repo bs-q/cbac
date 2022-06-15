@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="f"
+            type="hq.remview.ui.main.revenue.RevenueFragment" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/cancel_item"
+        android:onClick="@{(v)->f.onClick(v)}"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_98sdp">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:src="@drawable/cancel_icon"/>
+        <TextView
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:textAlignment="center"
+            android:id="@+id/txt"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            android:text="@string/revenuecancel"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/app_icon_background"/>
+    <item android:drawable="@drawable/app_icon" android:top="@dimen/_3sdp"
+        android:bottom="@dimen/_3sdp"
+        android:right="@dimen/_3sdp"
+        android:left="@dimen/_3sdp"/>
+</layer-list>

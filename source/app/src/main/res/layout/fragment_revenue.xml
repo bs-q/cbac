@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="f"
+            type="hq.remview.ui.main.revenue.RevenueFragment" />
+        <variable
+            name="vm"
+            type="hq.remview.ui.main.revenue.RevenueViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <FrameLayout
+        android:animateLayoutChanges="true"
+        android:background="#F9FCFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/with_restaurant"
+            android:background="#F9FCFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_alignParentTop="true"
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="#333333"
+                >
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="@{vm.restaurantName}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+            <FrameLayout
+                android:layout_below="@+id/header"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <include
+                    app:showCalendar="@{true}"
+                    android:id="@+id/list_item"
+                    app:f="@{f}"
+                    layout="@layout/layout_revenue_list_item"/>
+
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

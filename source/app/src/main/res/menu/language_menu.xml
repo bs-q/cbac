@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/vi"
+        android:icon="@drawable/vietnam"
+        android:title="@string/vi" />
+    <item android:id="@+id/en"
+        android:icon="@drawable/great_britain"
+        android:title="@string/en" />
+    <item android:id="@+id/ger"
+        android:icon="@drawable/germany"
+        android:title="@string/ger" />
+</menu>

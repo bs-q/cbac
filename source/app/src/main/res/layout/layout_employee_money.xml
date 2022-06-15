@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="money"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_98sdp">
+            <RelativeLayout
+                android:padding="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_alignParentStart="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="@{name}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@{money}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_22ssp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</layout>

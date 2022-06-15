@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="a"
+            type="hq.remview.ui.main.setting.employee.detail.EmployeeDetailActivity" />
+
+        <variable
+            name="vm"
+            type="hq.remview.ui.main.setting.employee.detail.EmployeeDetailViewModel" />
+
+        <variable
+            name="totalMoney"
+            type="String" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/news_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="#333333">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{a.myApplication().currentRestaurant.name}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias=".25" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{@string/employee_money +  ` - ` + name}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar_title" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingVertical="@dimen/_12sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:textStyle="bold"
+                android:text="@{((String)(@string/total)).toUpperCase()}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/total_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_28sdp"
+                />
+            <TextView
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                contentPadding="0"
+                android:includeFontPadding="false"
+                android:text="@{totalMoney}"
+                app:layout_constraintTop_toBottomOf="@id/total_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_46ssp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:scrollbars="none"
+                tools:listitem="@layout/layout_money_type"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:itemCount="7"
+                tools:orientation="vertical"
+                tools:scrollbars="vertical"
+                tools:spanCount="2"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_28sdp"
+                app:layout_constraintTop_toBottomOf="@id/total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/check"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+
+            <Button
+                android:onClick="@{(v)->a.check(name)}"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:id="@+id/check"
+                android:layout_width="0dp"
+                android:background="@drawable/check_button"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent=".475"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHeight_percent=".08"/>
+            <Button
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:onClick="@{(v)->a.print(name)}"
+                android:id="@+id/print"
+                android:layout_width="0dp"
+                android:background="@drawable/print_button"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent=".475"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".08"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>
